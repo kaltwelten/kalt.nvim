@@ -1,0 +1,7 @@
+vim.keymap.set('i', '<Tab>', '<NOP>')
+vim.keymap.set('', 'P', 'P`[')
+vim.keymap.set('v', ':s~', ':s~\\%V', { desc = 'Substitute in visual block' })
+vim.keymap.set('', '<Leader><Space>', vim.cmd.nohlsearch, { desc = 'Hide search results' })
+vim.keymap.set('', '<Leader><C-Escape>', vim.cmd.quitall, { desc = 'Quit all' })
+vim.keymap.set('', '<Leader><S-Escape>', function() vim.cmd.quitall({ bang = true }) end, { desc = 'Quit all w/o confirmation' })
+vim.keymap.set({ '', 'i' }, '<F5>', function() vim.cmd.write() end, { desc = 'Write file' })
