@@ -27,6 +27,7 @@ function M.setup()
       enabled = true,
       window = { border = 'rounded' },
     },
+    sources = { providers = { lsp = { fallbacks = {} } } },
   })
 end
 
