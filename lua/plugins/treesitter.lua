@@ -45,6 +45,9 @@ function M.setup()
       pattern = filetypes,
       callback = function(event) vim.treesitter.start(event.buf) end,
     })
+    for _, b in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.list_contains(filetypes, vim.bo[b].filetype) then vim.treesitter.start(b) end
+    end
   end)
 
   local swap = require('nvim-treesitter-textobjects.swap')
